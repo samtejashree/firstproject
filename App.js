@@ -1,12 +1,25 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Button, StyleSheet, Text, View } from 'react-native';
+import CompanyData from './components/CompanyData';
+
 
 export default function App() {
+  let data =100;
+  const fruit = () => {
+  console.warn("function called!");
+  }
+  const fruit1 = (val) => {
+    data =20;
+    console.warn(data);
+    }
   return (
     <View style={styles.container}>
-    <CompanyData />
+    {/* <CompanyData />
       <Text style={{ fontSize: 30 }}>Components</Text>
-      <UserData />
+      <UserData /> */}
+      <Text style={{ fontSize: 30 }}>Button and onPress event</Text>
+      <Button title='On Press' color={'green'} onPress={fruit}/>
+      <Button title='On Press 2' color={'yellow'} onPress={()=>fruit1('Hello tejas')}/>
       <StatusBar style="auto" />
     </View>
   );
@@ -22,15 +35,15 @@ const UserData = () => {
   )
 }
 
-const CompanyData = () => {
-  return (
-    <View>
-      <Text style={{ fontSize: 20 }}>CompanyName : Dambaruu</Text>
-      <Text style={{ fontSize: 20 }}>Total Emp : 100</Text>
-      <Text style={{ fontSize: 20 }}>Product : ABC Product</Text>
-    </View>
-  )
-}
+// const CompanyData = () => {
+//   return (
+//     <View>
+//       <Text style={{ fontSize: 20 }}>CompanyName : Dambaruu</Text>
+//       <Text style={{ fontSize: 20 }}>Total Emp : 100</Text>
+//       <Text style={{ fontSize: 20 }}>Product : ABC Product</Text>
+//     </View>
+//   )
+// }
 
 
 const styles = StyleSheet.create({
