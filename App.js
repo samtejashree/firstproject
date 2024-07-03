@@ -1,25 +1,43 @@
- import { StatusBar } from 'expo-status-bar';
+import { StatusBar } from 'expo-status-bar';
 import { Button, StyleSheet, Text, View } from 'react-native';
 import CompanyData from './components/CompanyData';
+import { useState } from 'react';
 
 
 export default function App() {
-  let data =100;
+  let data = 100;
   const fruit = () => {
-  console.warn("function called!");
+    console.warn("function called!");
   }
   const fruit1 = (val) => {
-    data =20;
+    data = 20;
     console.warn(data);
-    }
+  }
+
+  const [name, setName] = useState("teju");
+  let data1 = "sam";
+  function updateName() {
+    setName("tejaswini")
+    let data1 = "fruit";
+  }
+
   return (
     <View style={styles.container}>
-    {/* <CompanyData />
+        {/* text shown  */}
+      {/* <CompanyData />
       <Text style={{ fontSize: 30 }}>Components</Text>
       <UserData /> */}
-      <Text style={{ fontSize: 30 }}>Button and onPress event</Text>
+
+         {/* button part */}
+      {/* <Text style={{ fontSize: 30 }}>Button and onPress event</Text>
       <Button title='On Press' color={'green'} onPress={fruit}/>
-      <Button title='On Press 2' color={'yellow'} onPress={()=>fruit1('Hello tejas')}/>
+      <Button title='On Press 2' color={'yellow'} onPress={()=>fruit1('Hello tejas')}/> */}
+      
+         {/* difference between state and variable */}
+      <Text style={{ fontSize: 30 }}>{name}</Text>
+      <Text style={{ fontSize: 30 }}>{data1}</Text>
+      <Button title='Update Name' color={'green'} onPress={updateName} />
+
       <StatusBar style="auto" />
     </View>
   );
