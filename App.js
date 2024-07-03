@@ -1,4 +1,4 @@
-import { StatusBar } from 'expo-status-bar';
+ import { StatusBar } from 'expo-status-bar';
 import { Button, StyleSheet, Text, View } from 'react-native';
 import CompanyData from './components/CompanyData';
 
